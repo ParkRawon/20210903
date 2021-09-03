@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.micol.prj.notice.map.NoticeMapper">
+
+	<select id="noticeSelectList" resultType="co.micol.prj.notice.vo.NoticeVO">
+		select a.*,b.name 
+		from notice a, member b
+		where a.writer = b.id
+
+	</select>
+	
+	<select id="noticeSelect" resultType="co.micol.prj.notice.vo.NoticeVO">
+		select a.*,b.name 
+		from notice a, member b
+		where a.writer = b.id and a.id = #{id}
+
+	</select>
+	
+	<insert id="noticeInsert" parameterType="co.micol.prj.notice.vo.NoticeVO">
+		insert into notice (writer,writeDate, title, contents)
+		values(#{writer}, #{writeDate}, #{title}, #{contents}) 
+	</insert>
+	
+	<update id="noticeUpdate" parameterType="co.micol.prj.notice.vo.NoticeVO">
+		update notice
+		set writeDate=#{writeDate}, contents=#{contents}
+		where id=#{id}
+	</update>
+	
+<!--  <update id="noticeHitUpdate">
+		update notice set hit = hit + 1 where id = #{id}
+	</update>  -->	
+	
+	<delete id="noticeDelete" parameterType="co.micol.prj.notice.vo.NoticeVO">
+		delete from notice where id = #{id}
+	</delete>
+</mapper>

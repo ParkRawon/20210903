@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+        <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+        <property name="username" value="dev"/>
+        <property name="password" value="dev"/>
+      </dataSource>
+    </environment>
+  </environments>
+  <mappers>
+    <mapper resource="co/micol/prj/member/map/member-map.xml"/>  <!-- member table mapper -->
+    <mapper resource="co/micol/prj/notice/map/notice-map.xml"/>   <!-- notice table mapper    mapper를 먼저 설정하고 만들어 준다-->
+  </mappers>
+</configuration>
