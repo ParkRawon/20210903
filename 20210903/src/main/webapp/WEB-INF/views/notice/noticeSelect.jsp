@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,5 +9,9 @@
 </head>
 <body>
 ${notice.id } :${notice.title } :${notice.name } : ${notice.hit }
+<c:forEach var = "re" items = "${reply }">
+	${re.replyContext } : ${re.replyDate })
+</c:forEach>
+
 </body>
 </html>

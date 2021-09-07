@@ -8,6 +8,7 @@ import co.micol.prj.common.DataSource;
 import co.micol.prj.notice.map.NoticeMapper;
 import co.micol.prj.notice.service.NoticeService;
 import co.micol.prj.notice.vo.NoticeVO;
+import co.micol.prj.notice.vo.ReplyVO;
 
 public class NoticeServiceImpl implements NoticeService {
 	private SqlSession sqlSession = DataSource.getInstance().openSession(true);  //true시 자동커밋
@@ -48,6 +49,12 @@ public class NoticeServiceImpl implements NoticeService {
 	public int noticeDelete(NoticeVO vo) {
 		// 게시판 삭제하기
 		return map.noticeDelete(vo);
+	}
+
+	@Override
+	public List<ReplyVO> replySelectList(NoticeVO vo) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

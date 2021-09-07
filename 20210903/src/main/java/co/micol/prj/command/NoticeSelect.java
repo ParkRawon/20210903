@@ -17,7 +17,8 @@ public class NoticeSelect implements Command {
 		NoticeVO vo = new NoticeVO();
 		vo.setId(3);
 		
-		request.setAttribute("notice", noticeDao.noticeSelect(vo));
+		request.setAttribute("notice", noticeDao.noticeSelect(vo));  //본문글
+		request.setAttribute("reply", noticeDao.replySelectList(vo));  //댓글
 		return "notice/noticeSelect";
 	}
 

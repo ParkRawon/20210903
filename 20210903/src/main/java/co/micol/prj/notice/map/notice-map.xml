@@ -27,6 +27,10 @@
 		where id=#{id}
 	</update>
 	
+	<select id="">
+		
+	</select>
+	
 <!--  <update id="noticeHitUpdate">
 		update notice set hit = hit + 1 where id = #{id}
 	</update>  -->	
