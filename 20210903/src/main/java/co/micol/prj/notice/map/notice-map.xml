@@ -27,8 +27,8 @@
 		where id=#{id}
 	</update>
 	
-	<select id="">
-		
+	<select id="replySelectList" resultType="co.micol.prj.notice.vo.ReplyVO">
+		select * from reply where id = #{id}
 	</select>
 	
 <!--  <update id="noticeHitUpdate">
